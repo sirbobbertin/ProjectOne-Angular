@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Employee } from './employee.model';
 import { EmployeeService } from './employee.service';
+import { AuthService } from '../users/auth.service';
 
 @Component({
   selector: 'app-employee',
@@ -15,16 +16,19 @@ export class EmployeeComponent implements OnInit {
 
 updateInfo: Employee = {
   id: 0,
-  username: '',
+  userName: '',
   password:'',
-  address:''
+  address:'',
+  jobType:1
 }
 
   constructor(private employeeService: EmployeeService,
     private activatedRoute: ActivatedRoute,
+    private authService: AuthService,
     private router: Router) { }
 
   ngOnInit(): void {
+   // var employeeId =
   }
 
   editInfo(){
@@ -39,7 +43,18 @@ updateInfo: Employee = {
     );
   }
 
-  //come back
+  goToEditComponent(employeeId: any){
+    console.log("logged: " + employeeId);
+    this.router.navigate(['employee-edit', employeeId])
+  }
+
+  retrieveUserEmployeeType(){
+    return this.authService.retrieveUserEmployeeType();
+  }
+
+  
+
+  
   // viewInfo(){
   //   this.employeeService.viewInfoService().subscribe(
   //     (response) => {

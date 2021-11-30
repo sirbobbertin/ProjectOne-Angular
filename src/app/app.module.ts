@@ -11,6 +11,10 @@ import { ReimburstmentComponent } from './reimburstment/reimburstment.component'
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeeComponent } from './employee/employee.component';
 import { ManagerComponent } from './manager/manager.component';
+import { EditEmployeeComponent } from './employee/edit-employee/edit-employee.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ReimburstmentPendingComponent } from './reimburstment_pending/reimburstment-pending.component';
+import { ReimburstmentResolvedComponent } from './reimburstment_resolved/reimburstment-resolved.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { ManagerComponent } from './manager/manager.component';
     MenuComponent,
     ReimburstmentComponent,
     EmployeeComponent,
-    ManagerComponent
+    ManagerComponent,
+    EditEmployeeComponent,
+    ProfileComponent,
+    ReimburstmentPendingComponent,
+    ReimburstmentResolvedComponent,
   ],
   imports: [
     BrowserModule,

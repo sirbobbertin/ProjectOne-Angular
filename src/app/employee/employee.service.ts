@@ -8,15 +8,20 @@ import { Employee } from './employee.model';
 })
 export class EmployeeService {
 
-  baseUrl = "http://localhost:4041/accounts/employees";
+  baseUrl = "http://localhost:4041/employees/profile";
+  updateUrl = "http://localhost:4041/employees/profile/update";
 
   constructor(private http: HttpClient) { }
 
   updateInfoService(updateInfo: Employee): Observable<Employee>{
-    return this.http.put<Employee>(this.baseUrl+"/"+updateInfo.id, updateInfo);
+    return this.http.put<Employee>(this.updateUrl+"/"+updateInfo.id, updateInfo);
   }
 
   viewInfoService(employeeId: number): Observable<Employee>{
     return this.http.get<Employee>(this.baseUrl+"/"+employeeId);
   }
+  
+  // getAEmployeeService(employeeId: number): Observable<Employee>{
+    
+  // }
 }

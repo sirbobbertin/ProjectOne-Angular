@@ -7,10 +7,7 @@ import { AuthService } from '../users/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  // after injecting authService, we cannot use authService directly in the template
-  // to fix this , we created functions in the component class which in turn
-      // accessed the functions/properties of authService
-  // now the template can call these functions of the component directly
+ 
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
@@ -22,5 +19,9 @@ export class HeaderComponent implements OnInit {
 
   retrieveUserType(){
     return this.authService.retrieveUserType();
+  }
+  
+  retrieveUserEmployeeType(){
+    return this.authService.retrieveUserEmployeeType();
   }
 }

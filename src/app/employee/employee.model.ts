@@ -1,7 +1,8 @@
 export class Employee{
     id: number = 0;
-    username: string = '';
+    userName: string = '';
     password: string = '';
     address: string = '';
+    jobType: number = 0;
 
 }
